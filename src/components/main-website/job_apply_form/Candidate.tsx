@@ -114,16 +114,16 @@ const Form = () => {
     const values = await form.validateFields();
 
     const payload = {
-      first_name: values.fname,
-      last_name: values.lname,
-      email: values.email,
-      phone: values.phone,
-      education: values.education,
-      experience: values.experience,
-      address: values.address,
+      first_name: values.Fname,
+      last_name: values.Lname,
+      email: values.Email,
+      phone: values.PhoneNo,
+      education: values.Education,
+      experience: values.Experience,
+      address: values.Address,
       // resume: fileUploadUrl,
       job_id: jobId
-    };
+    };  
     try {
       const response = await axios.post(
         `${BaseUrl}/postJobApplication`,
@@ -157,7 +157,9 @@ const Form = () => {
           <div>
             <label htmlFor="firstName">First Name <span className="text-red-500 text-sm ml-1">*</span></label>
             <FormInput
-              name="fname"
+
+              name="Fname"
+
               showName="First Name"
               required={true}
               type="text"
@@ -168,7 +170,9 @@ const Form = () => {
           <div>
             <label htmlFor="lastName">Last Name <span className="text-red-500 text-sm ml-1">*</span></label>
             <FormInput
-              name="lname"
+
+              name="Lname"
+
               showName="Last Name"
               required={true}
               type="text"
@@ -179,7 +183,7 @@ const Form = () => {
           <div>
             <label htmlFor="email">Email <span className="text-red-500 text-sm ml-1">*</span></label>
             <FormInput
-              name="email"
+              name="Email"
               required={true}
               type="email"
               className="w-full border border-gray-300 rounded-md px-3 py-2 mt-1"
@@ -188,7 +192,9 @@ const Form = () => {
           <div>
             <label htmlFor="phoneNumber">Phone Number <span className="text-red-500 text-sm ml-1">*</span></label>
             <FormInput
-              name="phone"
+
+              name="PhoneNo"
+
               required={true}
               type="text"
               pattern={/^[0-9]{10}$/}
@@ -199,16 +205,16 @@ const Form = () => {
           <div>
             <label htmlFor="education">Education <span className="text-red-500 text-sm ml-1">*</span></label>
             <FormInput
-              name="education"
+              name="Education"
               select={true}
               required={true}
               options={EducationOptions}
             />
           </div>
           <div>
-            <label htmlFor="experience">Years of Experience <span className="text-red-500 text-sm ml-1">*</span></label>
+            <label htmlFor="Experience">Years of Experience <span className="text-red-500 text-sm ml-1">*</span></label>
             <FormInput
-              name="experience"
+              name="Experience"
               select={true}
               required={true}
               options={ExperienceOptions}
@@ -233,7 +239,9 @@ const Form = () => {
           </div>
           <div>
             <label htmlFor="address">Address <span className="text-red-500 text-sm ml-1">*</span></label>
-            <FormInput name="address" required={true} type="text" pattern={/^[0-9A-Za-z\s,'-]+$/} textArea={true} />
+
+            <FormInput name="Address" required={true} type="text" pattern={/^[0-9A-Za-z\s,'-]+$/} textArea={true} />
+
           </div>
           <div className="flex justify-end">
             <button
